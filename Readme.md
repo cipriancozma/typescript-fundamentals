@@ -1,3 +1,3 @@
 ## TypeScript Info
 
-(![TypeScript Info](./assets/ts-info.png))
+(![TypeScript Info](./public/ts-info.png))
