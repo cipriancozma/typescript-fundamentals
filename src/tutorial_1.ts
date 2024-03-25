@@ -77,3 +77,56 @@ function calculatePrice(price: number, discount?: number): number {
 let priceAfterDiscount = calculatePrice(100, 20)
 
 // 7.2. Functions - Default Parameter
+function calculateScore(initialScore: number, penaltyPoints: number = 0): number {
+    return initialScore - penaltyPoints
+}
+
+let score = calculateScore(100);
+
+// 7.3. Functions - Rest Parameter
+function sum(...numbers: number[]): number {
+    return numbers.reduce((acc, el) => {
+        return acc + el }, 0)
+}
+
+let sum_1 = sum(1, 3, 4, 5)
+
+// 7.4. Void Keyword - absence of the value, the function does not return a value
+function logMessage(message: string): void {
+    console.log(message)
+}
+
+// 7.5 Type Guards
+function processInput(num: number |  string) {
+    if(typeof num === 'number') {
+        console.log(num * 2)
+    }
+
+    if(typeof num === 'string') {
+        console.log(num.toLocaleUpperCase())
+    }
+}
+
+// 7.6. Functions - Objects as Parameters
+function createEmployee({id}: {id: number}):{
+    id: number;
+    isActive: boolean
+} {
+    return {
+        id,
+        isActive: id % 2 === 0
+    }
+}
+
+function processData(input: string | number, config: { reverse: boolean } = { reverse: false }): string | number {
+    if(typeof input === 'number') {
+        return input ** 2
+    } 
+
+    if(typeof input === 'string' && config.reverse) {
+        const reversedStr = input.split("").reduce((acc, char) => char + acc, "")
+        return reversedStr.toLocaleUpperCase()
+    } else {
+        return input.toLocaleUpperCase()
+    }   
+}
