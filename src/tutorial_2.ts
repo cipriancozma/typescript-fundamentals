@@ -40,3 +40,42 @@ const johnny: Manager = { id: 2, name: 'johnny', employees: [alice, andrew]}
 // printStaffDetails(johnny)
 
 // 9. Intersection Type
+type Book = {
+    id: number;
+    name: string;
+    price: number;
+    discount?: number
+}
+
+const book1: Book = {
+    id: 1,
+    name: "Book1",
+    price: 123
+}
+
+// 10. Interfaces
+// -> shape of an object
+
+interface BookWork {
+    readonly isbn: number,
+    title: string,
+    author: string,
+    genre: string,
+    // method
+    printAuthor(): void,
+    printTitle(message: string): string
+}
+
+const deepWork: BookWork = {
+    isbn: 123,
+    title: 'deep work',
+    author: 'cal newport',
+    genre: 'self help',
+    printAuthor() {
+        console.log(this.author)
+    },
+    printTitle(message) {
+        return `${this.title} ${message}`
+    }
+}
+
