@@ -79,3 +79,23 @@ const deepWork: BookWork = {
     }
 }
 
+interface Computer {
+    readonly id: number,
+    brand: string,
+    ram: number,
+    storage?: string,
+    upgradeRam(num: number): number
+}
+
+const comp: Computer = {
+    id: 1,
+    brand: "Acer",
+    ram: 16,
+    upgradeRam(num) {
+        this.ram += num
+        return this.ram;
+    }
+}
+
+comp.upgradeRam(32)
+
