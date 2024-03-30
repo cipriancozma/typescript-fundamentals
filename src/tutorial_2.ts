@@ -99,3 +99,40 @@ const comp: Computer = {
 
 comp.upgradeRam(32)
 
+// 11. Interfaces - Merge and Extend
+
+interface Person {
+    name: string;
+    getDetails(): string;
+}
+
+interface DogOwner {
+    dogName: string;
+    getDogDetails(): string;
+}
+
+interface Person {
+    age: number
+}
+
+const person: Person = {
+    name: 'john',
+    age: 30,
+    getDetails() {
+        return `Name: ${this.name}, Age: ${this.age}`
+    }
+}
+
+interface Employeer extends Person {
+    employeerId: number
+}
+
+const employeer: Employeer = {
+    employeerId: 123,
+    name: "Ciprian",
+    age: 30,
+    getDetails() {
+        return `Name: ${this.name}, Age: ${this.age}, EmployeerId: ${this.employeerId}`
+    }
+}
+
