@@ -135,4 +135,3 @@ const employeer: Employeer = {
         return `Name: ${this.name}, Age: ${this.age}, EmployeerId: ${this.employeerId}`
     }
 }
-
