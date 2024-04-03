@@ -46,5 +46,11 @@ if(isManager(employee)) {
     employee.delegateTasks()
 }
 
-// 12. Interface vs Type Alias
+// 12. Tuples
 
+let people:[string, number] = ['john', 25]
+let data: readonly[number, number, number] = [1, 4, 7]
+// data.push(5)
+
+
+// 13. Enums
