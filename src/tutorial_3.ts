@@ -54,3 +54,21 @@ let data: readonly[number, number, number] = [1, 4, 7]
 
 
 // 13. Enums
+enum ServerResponseStatus {
+    success = 200,
+    error = 500
+}
+
+interface ServerResponse {
+    result: ServerResponseStatus;
+    data: string[]
+}
+
+function getServerResponse(): ServerResponse {
+    return {
+        result: ServerResponseStatus.success,
+        data: ['first item', 'second item']
+    }
+}
+
+
