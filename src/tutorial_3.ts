@@ -103,3 +103,41 @@ const usr: UserTest = createUser({
     id: 1, name: 'ciprian', role: UserRole.Manager, contact: ['ciprian@yahoo.com', '123123123']
 })
 
+// 14. Type Assertion
+
+let someValue: any = 'it is a string'
+
+let strLength: number = (someValue as string).length
+
+enum Statuses {
+    Pending = 'pending',
+    Declined = 'declined'
+}
+
+type Users = {
+    name: string,
+    status: Statuses
+}
+
+const statusVal = 'pending'
+
+const users: Users = {
+    name: 'john',
+    status: statusVal as Statuses
+}
+
+// 15. Type - 'unknown'
+
+let unknownVal: unknown;
+
+unknownVal = 'something here'
+unknownVal = [1, 2, 3]
+unknownVal = 123
+// unknownVal.toFixed(2) not working here. We need to provide some type checks as below because the type is unknown
+
+if(typeof unknownVal === 'number') {
+    unknownVal.toFixed(2)
+}
+
+// 16. Type - 'never'
+
