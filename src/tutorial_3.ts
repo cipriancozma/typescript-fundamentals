@@ -82,3 +82,24 @@ enum ServerResponseStatusTest {
 // for the first interface ServerResponseStatus with number values it prints also the keys not only the values.
 // to solve this issue, we can add a type guard or transform the value to a string
 
+enum UserRole {
+    Admin,
+    Manager,
+    Employee
+}
+
+type UserTest = {
+    id: number,
+    name: string,
+    role: UserRole,
+    contact: [string, string]
+}
+
+function createUser(user: UserTest): UserTest {
+    return user
+}
+
+const usr: UserTest = createUser({
+    id: 1, name: 'ciprian', role: UserRole.Manager, contact: ['ciprian@yahoo.com', '123123123']
+})
+
