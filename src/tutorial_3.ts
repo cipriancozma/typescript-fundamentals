@@ -71,4 +71,14 @@ function getServerResponse(): ServerResponse {
     }
 }
 
+// 13.1. Enums -> Reverse Mapping
+
+// Important to add instead of number values, add strings
+enum ServerResponseStatusTest {
+    success = 'success',
+    error = 'error'
+}
+
+// for the first interface ServerResponseStatus with number values it prints also the keys not only the values.
+// to solve this issue, we can add a type guard or transform the value to a string
 
