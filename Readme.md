@@ -13,3 +13,5 @@ The unknown type in TS is a type safe counterpart of the any type.
 It's like saying that a variable could be anything, but we need to perform some type checks before we can use it.
 
 ## Type -> never
+
+In TS, never is a type that represents the type of values that never occur. You can't assign any value to a variable of type never

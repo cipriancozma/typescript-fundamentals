@@ -141,3 +141,21 @@ if(typeof unknownVal === 'number') {
 
 // 16. Type - 'never'
 
+let aValue: never
+
+type Theme = 'light' | 'dark'
+
+function checkTheme(theme: Theme): void {
+    if(theme === 'light') {
+        console.log('light theme')
+    }
+
+    if(theme === 'dark') {
+        console.log('dark theme')
+    }
+
+    // theme -> in this case theme will be of type never, we handle all the possible values
+}
+
+// 17. Modules
+
