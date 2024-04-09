@@ -157,5 +157,37 @@ function checkTheme(theme: Theme): void {
     // theme -> in this case theme will be of type never, we handle all the possible values
 }
 
-// 17. Modules
+// 17. Type Guards - Typeof
+type ValueType = string | number | boolean;
+let value: ValueType;
+value = Math.random() < 0.33 ? 'Hello' : Math.random() < 0.66 ? 123.456 : true
+
+function checkValue(value: ValueType): void {
+    if(typeof value === 'string') {
+        console.log(value.toLocaleLowerCase())
+        return
+    }
+
+    if(typeof value === 'number') {
+        console.log(value.toFixed(2))
+        return
+    }
+
+    if(typeof value ==='boolean') {
+        console.log("boolean: ", value)
+    }
+}
+
+// 18. Type Guards - Instanceof
+
+function checkInput(input: Date | string): string {
+    if(input instanceof Date) {
+        return input.getFullYear().toString()
+    } else {
+        return input
+    }
+}
+
+const year = checkInput(new Date()) // instance of Date
+const random = checkInput('2020-05-05') // string
 

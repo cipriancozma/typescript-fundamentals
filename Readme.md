@@ -15,3 +15,7 @@ It's like saying that a variable could be anything, but we need to perform some 
 ## Type -> never
 
 In TS, never is a type that represents the type of values that never occur. You can't assign any value to a variable of type never
+
+## Type Guarding
+
+Type Guarding is a term that refers to the ability to narrow down the type of an object within a certain scope. This is usually done by using conditional statements that check the type of an object.
