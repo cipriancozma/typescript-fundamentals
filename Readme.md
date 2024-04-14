@@ -19,3 +19,7 @@ In TS, never is a type that represents the type of values that never occur. You 
 ## Type Guarding
 
 Type Guarding is a term that refers to the ability to narrow down the type of an object within a certain scope. This is usually done by using conditional statements that check the type of an object.
+
+## Type Predicate
+
+A type predicate is a function whose return type is a special kind of type that can be used to narrow down types within conditional blocks.

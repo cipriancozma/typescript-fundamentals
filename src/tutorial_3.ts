@@ -191,3 +191,29 @@ function checkInput(input: Date | string): string {
 const year = checkInput(new Date()) // instance of Date
 const random = checkInput('2020-05-05') // string
 
+// 19. Type Predicate
+
+type Student = {
+    name: string;
+    study: () => void
+}
+
+type User2 = {
+    name: string;
+    login: () => void
+}
+
+type Person2 = Student | User2
+
+const randomPerson = (): Person2 => {
+    return Math.random() > 0.5 ? { name: "john", study: () => console.log('studying')} : { name: 'mary', login: () => console.log("logging")}
+}
+
+const person2 = randomPerson()
+
+function isStudent(person: Person2): person is Student {
+    return (person as Student).study !== undefined
+}
+
+// 20. Type Guards - Discriminated Unions
+
